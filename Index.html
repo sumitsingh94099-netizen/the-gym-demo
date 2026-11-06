@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronCore Fitness Studio | Surat's Premier Gym</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ffffff; }
+        h1, h2, h3, .brand-font { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        .neon-border { box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+    </style>
+</head>
+<body class="bg-neutral-950 text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 px-5 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold brand-font tracking-wider text-red-500">
+            IRON<span class="text-white">CORE</span> SURAT
+        </div>
+        <a href="#trial" class="bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-4 py-2 rounded-full transition">
+            FREE TRIAL
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-5 text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(10,10,10,1)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80');">
+        <div class="max-w-3xl mx-auto">
+            <span class="bg-red-600/20 border border-red-500 text-red-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                #1 Transformation Center in Surat
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold mt-4 leading-tight">
+                BUILD YOUR <span class="text-red-500">DREAM PHYSIQUE</span> TODAY
+            </h1>
+            <p class="text-neutral-300 mt-4 text-lg max-w-xl mx-auto">
+                Certified Personal Trainers, Imported Equipment, and Custom Vegetarian & Non-Veg Diet Plans tailored for you.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/919876543210?text=Hi%20IronCore%20Fitness!%20I%20want%20to%20claim%20my%203-Day%20FREE%20Trial%20Pass." target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl text-lg neon-border flex items-center justify-center gap-2 transition">
+                    <i class="fab fa-whatsapp text-2xl"></i> Claim 3-Day Free Trial
+                </a>
+                <a href="#plans" class="bg-neutral-800 hover:bg-neutral-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition">
+                    View Membership Plans
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive BMI Calculator (High-Value Feature) -->
+    <section class="py-16 px-5 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-red-500">CHECK YOUR FITNESS LEVEL (BMI)</h2>
+                <p class="text-neutral-400 mt-2">Apna Height aur Weight daalein aur turant janein ki aapko Weight Loss ki zaroorat hai ya Muscle Gain ki.</p>
+                <div class="mt-6 space-y-4">
+                    <div>
+                        <label class="text-sm text-neutral-300">Height (in cm)</label>
+                        <input type="number" id="height" placeholder="e.g. 170" class="w-full mt-1 p-3 rounded-lg bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-red-500">
+                    </div>
+                    <div>
+                        <label class="text-sm text-neutral-300">Weight (in kg)</label>
+                        <input type="number" id="weight" placeholder="e.g. 70" class="w-full mt-1 p-3 rounded-lg bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-red-500">
+                    </div>
+                    <button onclick="calculateBMI()" class="w-full bg-white text-black hover:bg-neutral-200 font-bold py-3 rounded-lg transition">
+                        CALCULATE MY BMI
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 text-center">
+                <h3 class="text-xl text-neutral-400">Your BMI Score</h3>
+                <div id="bmi-Value" class="text-6xl font-bold text-red-500 my-4">--.-</div>
+                <p id="bmi-Status" class="text-lg font-semibold text-neutral-300 mb-6">Enter details to check status</p>
+                <a id="diet-Btn" href="https://wa.me/919876543210?text=Hi!%20I%20checked%20my%20BMI%20on%20your%20website.%20Please%20share%20a%20custom%20Diet%20%26%20Workout%20plan." target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl transition">
+                    <i class="fab fa-whatsapp text-xl"></i> Get Free Diet Chart on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section id="plans" class="py-16 px-5 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold">MEMBERSHIP <span class="text-red-500">PLANS</span></h2>
+            <p class="text-neutral-400 mt-2">No hidden charges. Direct inquiry on WhatsApp.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- 1 Month -->
+            <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold">MONTHLY STARTER</h3>
+                    <div class="text-4xl font-bold text-red-500 my-4">₹1,500 <span class="text-sm text-neutral-400 font-normal">/ 1 Month</span></div>
+                    <ul class="space-y-3 text-neutral-300 text-sm mb-6">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Full Gym & Cardio Access</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> General Floor Trainer Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Locker & Changing Room</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/919876543210?text=Hi!%20I%20am%20interested%20in%20the%201-Month%20(Rs.1500)%20Gym%20Membership." target="_blank" class="w-full block text-center bg-neutral-800 hover:bg-red-600 py-3 rounded-xl font-bold transition">
+                    Book Plan on WhatsApp
+                </a>
+            </div>
+
+            <!-- 6 Months (Popular) -->
+            <div class="bg-neutral-900 border-2 border-red-500 rounded-2xl p-6 flex flex-col justify-between relative neon-border">
+                <span class="absolute -top-3 right-5 bg-red-600 text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
+                <div>
+                    <h3 class="text-2xl font-bold">6 MONTHS TRANSFORMATION</h3>
+                    <div class="text-4xl font-bold text-red-500 my-4">₹5,500 <span class="text-sm text-neutral-400 font-normal">/ 6 Months</span></div>
+                    <ul class="space-y-3 text-neutral-300 text-sm mb-6">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Everything in Monthly Plan</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Custom Vegetarian Diet Plan</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Monthly Body Fat & BMI Check</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Free Steam Bath (2x/month)</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20join%20the%206-Months%20Transformation%20Plan%20(Rs.5500)." target="_blank" class="w-full block text-center bg-red-600 hover:bg-red-700 py-3 rounded-xl font-bold transition">
+                    Book Plan on WhatsApp
+                </a>
+            </div>
+
+            <!-- 1 Year -->
+            <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold">ANNUAL PRO CLUB</h3>
+                    <div class="text-4xl font-bold text-red-500 my-4">₹8,999 <span class="text-sm text-neutral-400 font-normal">/ 1 Year</span></div>
+                    <ul class="space-y-3 text-neutral-300 text-sm mb-6">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Unlimited Gym + Cardio + CrossFit</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Dedicated Diet & Workout Chart</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> 1 Month Membership Freeze Option</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20details%20about%20the%201-Year%20Annual%20Pro%20Membership%20(Rs.8999)." target="_blank" class="w-full block text-center bg-neutral-800 hover:bg-red-600 py-3 rounded-xl font-bold transition">
+                    Book Plan on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Location -->
+    <footer id="trial" class="bg-neutral-900 border-t border-neutral-800 py-10 px-5 text-center">
+        <h3 class="text-2xl font-bold text-red-500">VISIT OUR GYM TODAY</h3>
+        <p class="text-neutral-400 mt-2">3rd Floor, Shoppers Plaza, Near Adajan / Vesu Main Road, Surat</p>
+        <p class="text-neutral-400 mt-1">Timings: Mon-Sat (5:30 AM - 10:00 PM) | Sunday Morning Open</p>
+        <div class="mt-6">
+            <a href="https://wa.me/919876543210?text=Hi!%20Please%20share%20your%20exact%20Google%20Map%20location%20and%20Free%20Trial%20details." target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-full">
+                <i class="fab fa-whatsapp text-xl"></i> Chat with Gym Manager
+            </a>
+        </div>
+        <p class="text-xs text-neutral-600 mt-8">© 2026 IronCore Fitness Surat. Designed for High Conversion.</p>
+    </footer>
+
+    <!-- BMI Script -->
+    <script>
+        function calculateBMI() {
+            const h = parseFloat(document.getElementById('height').value);
+            const w = parseFloat(document.getElementById('weight').value);
+            if (!h || !w || h <= 0 || w <= 0) {
+                alert("Please enter valid Height (cm) and Weight (kg)!");
+                return;
+            }
+            const bmi = (w / ((h / 100) * (h / 100))).toFixed(1);
+            document.getElementById('bmi-Value').innerText = bmi;
+            
+            let status = "";
+            if (bmi < 18.5) status = "Underweight (Need Muscle Gain Bulking Plan 💪)";
+            else if (bmi < 24.9) status = "Fit & Normal (Ready for Lean Shredding 🔥)";
+            else if (bmi < 29.9) status = "Overweight (Need Fat Loss & Cardio Program 🏃)";
+            else status = "Obese (Urgent Transformation Needed ⚡)";
+            
+            document.getElementById('bmi-Status').innerText = status;
+            document.getElementById('diet-Btn').href = `https://wa.me/919876543210?text=Hi!%20My%20BMI%20is%20${bmi}%20(${status}).%20I%20want%20a%203-Day%20Free%20Trial%20and%20Diet%20Plan.`;
+        }
+    </script>
+</body>
+</html>
